@@ -1,0 +1,173 @@
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="script-src 'self';">
+<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css' rel='stylesheet'>
+<title>ForgeKit Launcher</title>
+<style>
+  @import url('../resources/fonts/poppins.css'); /* Change the URL to a valid location to the Poppins google font */
+
+  :root {
+    --primary-color: #DD2C00;
+    --secondary-color: #FE5722;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    letter-spacing: -0.25px;
+    word-spacing: -0.25px;
+    color: white;
+  }
+
+  .window {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    background: black;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header {
+    width: 100%;
+    height: 50px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background: var(--primary-color);
+    background: linear-gradient(90deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .name {
+    font-weight: 700;
+  }
+
+  .version {
+    font-weight: 600;
+  }
+
+  #left-swap, #right-swap {
+    padding: 8px;
+    border-radius: 4px;
+    background-color: white;
+    color: black;
+    margin-left: 40px;
+    margin-right: 40px;
+    cursor: pointer;
+  }
+
+  .content {
+    margin-top: 60px;
+    padding: 10px;
+    width: calc(100% - 20px);
+    height: fit-content;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tags {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .tag {
+    margin-right: 4px;
+    background-color: white;
+    color: var(--secondary-color);
+    padding: 8px;
+    border-radius: 6px;
+    width: fit-content;
+    font-weight: 600;
+    font-size: 10px;
+    margin-bottom: 6px;
+  }
+
+  .tag:nth-child(1) {
+    background-color: var(--secondary-color);
+    color: white;
+  }
+
+  .title {
+    font-weight: 600;
+    font-size: 30px;
+  }
+
+  hr {
+    height: 2px;
+    background-color: white;
+    width: 100vw;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: -10px;
+  }
+
+  h1 {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--primary-color);
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--primary-color);
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+
+  p {
+    font-size: 14px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+  }
+
+  li {
+    margin-left: 20px;
+    font-size: 14px;
+  }
+</style>
+<div class="window">
+    <div class="header">
+        <i id="left-swap" class="fa-solid fa-arrow-left"></i>
+        <div class="text">
+            <span class="name"></span>
+            <span class="version"></span>
+        </div>
+        <i id="right-swap" class="fa-solid fa-arrow-right"></i>
+    </div>
+    <div class="content">
+        <div class="hero">
+            <div class="tags"><div class="tag" id="type"></div><div class="tag" id="extra-info"></div></div>
+            <span class="title"></span>
+            <hr>
+        </div>
+        <div class="notes">
+            <!-- Patch Note Contents Go Here (Supported tags: h1, h2, p, ul, li)-->
+        </div>
+    </div>
+</div>
+</html>
